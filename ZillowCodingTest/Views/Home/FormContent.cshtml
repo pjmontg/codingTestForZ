@@ -1,0 +1,31 @@
+﻿@model ZillowCodingTest.Models.searchresultsRequest
+
+@{
+    AjaxOptions ajaxOptions = new AjaxOptions
+    {
+        UpdateTargetId = "formContent",
+        Url = Url.Action("GetPropertyData"),
+        OnBegin = "OnAjaxBegin",
+        OnComplete = "OnAjaxComplete"
+    };
+}
+
+@using (Ajax.BeginForm("GetPropertyData", ajaxOptions))
+{
+    <div width="100%" class="search-bar">
+        <div class="search-fields">
+            <div style="float: left">
+                @Html.TextBoxFor(x => x.address, new { @class = "search address", @placeholder = "Street Address" })<br />
+                @{Html.Validate("address");}
+            </div>
+            <div style="float: left">
+                @Html.TextBoxFor(x => x.citystatezip, new { @class = "search zip",  @placeholder = "City, State or Zip" })<br />
+                @{Html.Validate("citystatezip");}
+            </div>
+            <div style="float: left">
+                <input type="submit" value="Search" class="button" />
+            </div>
+        </div>
+    </div>
+
+}

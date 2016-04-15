@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZillowCodingTest", "ZillowCodingTest\ZillowCodingTest.csproj", "{73AC265B-C58A-47BD-BA1F-2DF3314D15B5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{0BB75B90-B5DE-4590-AC91-36EF3E3CAF25}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{6C9FBF88-8E84-494C-A4D2-E8B91BB0ABA2}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Scripts\Deploy-AzureResourceGroup.ps1 = PublishScripts\Scripts\Deploy-AzureResourceGroup.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{D098CF40-2782-4407-BF01-6B4C1D86A761}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Templates\ZillowCodingTest.json = PublishScripts\Templates\ZillowCodingTest.json
+		PublishScripts\Templates\ZillowCodingTest.param.dev.json = PublishScripts\Templates\ZillowCodingTest.param.dev.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{73AC265B-C58A-47BD-BA1F-2DF3314D15B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73AC265B-C58A-47BD-BA1F-2DF3314D15B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73AC265B-C58A-47BD-BA1F-2DF3314D15B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73AC265B-C58A-47BD-BA1F-2DF3314D15B5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6C9FBF88-8E84-494C-A4D2-E8B91BB0ABA2} = {0BB75B90-B5DE-4590-AC91-36EF3E3CAF25}
+		{D098CF40-2782-4407-BF01-6B4C1D86A761} = {0BB75B90-B5DE-4590-AC91-36EF3E3CAF25}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,158 @@
+﻿body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Helvetica Neue', 'Open Sans', open-sans, Arial, sans-serif;
+    font-size: 0.8em;
+}
+
+
+
+.field-validation-error {
+    color: #ff0000;
+    margin-left: 12px;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.search.input-validation-error {
+    border: 1px solid #ff0000 !important;
+    background-color: #ffeeee;
+}
+
+input.input-validation-error::-webkit-input-placeholder {
+    color: #ff6666 !important;
+}
+
+input.input-validation-error:-moz-placeholder { /* Firefox 18- */
+    color: #ff6666 !important;
+}
+
+input.input-validation-error::-moz-placeholder { /* Firefox 19+ */
+    color: #ff6666 !important;
+}
+
+input.input-validation-error:-ms-input-placeholder {
+    color: #ff6666 !important;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-sumarry-valid {
+    display: none;
+}
+
+.table-layout {
+    display: table;
+}
+
+    .table-layout > div {
+        display: table-row;
+        height: 1.5em;
+    }
+
+        .table-layout > div > div {
+            display: table-cell;
+        }
+
+.label {
+    color: #777;
+    padding-right: 20px;
+}
+
+.search {
+    padding: 5px 5px 5px 10px;
+    font-size: 16px;
+    height: 20px;
+    margin: 0px 10px 0px 0px;
+    border: none;
+    outline: none;
+}
+
+.loader {
+    padding-top: 100px;
+    font-size: 32px;
+    color: #999;
+}
+
+.center {
+    text-align: center;
+    margin: auto;
+}
+
+.search-fields {
+    margin: auto;
+    width: 595px;
+    height: 50px;
+    line-height: 50px;
+}
+
+.search-bar {
+    padding: 10px;
+    background-color: #1656a5;
+}
+
+.address {
+    width: 300px;
+}
+
+.hidden {
+    display: none;
+}
+
+.results {
+    width: 900px;
+    margin: auto;
+}
+
+    .results h2 {
+        text-align: left;
+        width: 100%;
+        font-size: 48px;
+        font-weight: 300;
+    }
+
+    .results h3 {
+        text-align: left;
+        width: 100%;
+        font-size: 32px;
+        font-weight: 300;
+        margin-top: -40px;
+    }
+
+.no-data-found {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #999;
+}
+
+.zip {
+    width: 140px;
+}
+
+.button {
+    height: 33px;
+    font-size: 14px;
+    width: 100px;
+    text-align: center;
+}
+
+.results fieldset {
+    border: none;
+    margin-bottom: 20px;
+}
+
+    .results fieldset legend {
+        background: none;
+        color: #000;
+        padding: 5px 10px;
+        font-size: 15px;
+        font-weight: bold;
+        margin-left: -20px;
+        width: 100%;
+    }

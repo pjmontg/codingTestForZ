@@ -1,0 +1,114 @@
+﻿@model ZillowCodingTest.Models.searchresults
+
+@Html.Partial("FormContent", Model.request)
+
+
+@if (null != Model && null != Model.response)
+{
+    <div style="width: 100%">
+        <div class="results">
+            @foreach (var item in Model.response.results)
+            {
+                <h2>@item.address.street</h2>
+                <h3>@item.address.city, @item.address.state @item.address.zipcode</h3>
+                <div style="float:left;">
+                    <fieldset>
+                        <legend>FACTS</legend>
+                        <div class="table-layout">
+
+                            <div><div class="label">Longitude</div><div>@item.address.longitude</div></div>
+                            <div><div class="label">Latitude</div><div>@item.address.latitude</div></div>
+                            <div><div class="label">Bedrooms</div><div>@item.bedrooms</div></div>
+                            <div><div class="label">Bathrooms</div><div>@item.bathrooms</div></div>
+                            <div><div class="label">Finished Sq. Feet</div><div>@item.finishedSqFt</div></div>
+                            <div><div class="label">FIPSCounty</div><div>@item.FIPScounty</div></div>
+                            <div><div class="label">Last Sold Date</div><div>@item.lastSoldDate</div></div>
+                            <div><div class="label">Last Sold Price</div><div>@item.lastSoldPrice</div></div>
+                            <div><div class="label">Lot Size (sq. feet)</div><div>@item.lotSizeSqFt</div></div>
+                            <div><div class="label">Rent Zestimate</div><div>@item.rentzestimate</div></div>
+                            <div><div class="label">Tax Assessment</div><div>@item.taxAssessment</div></div>
+                            <div><div class="label">Tax Assessment Year</div><div>@item.taxAssessmentYear</div></div>
+                            <div><div class="label">Total Rooms</div><div>@item.totalRooms</div></div>
+                            <div><div class="label">UseCode</div><div>@item.useCode</div></div>
+                            <div><div class="label">Year Built</div><div>@item.yearBuilt</div></div>
+                            <div><div class="label">ZPid</div><div>@item.zpid</div></div>
+                        </div>
+
+                    </fieldset>
+                    <fieldset>
+                        <legend>LOCAL REAL ESTATE INFORMATION</legend>
+
+                        @if (null != item.localRealEstate)
+                    {
+                        foreach (var rs in item.localRealEstate)
+                        {
+                                <div class="table-layout">
+                                    <div><div class="label">ID</div><div>@rs.id</div></div>
+                                    <div><div class="label">For Sale</div><div><a href="@rs.links.forSaleByOwner">@rs.links.forSale</a></div></div>
+                                    <div><div class="label">For Sale By Owner</div><div><a href="@rs.links.forSaleByOwner">@rs.links.forSaleByOwner</a></div></div>
+                                    <div><div class="label">Overview</div><div><a href="@rs.links.overview">@rs.links.overview</a></div></div>
+                                    <div><div class="label">Name</div><div>@rs.name</div></div>
+                                    <div><div class="label">Type</div><div>@rs.type</div></div>
+                                    <div><div class="label">zIndex One Year Change</div><div>@rs.zindexOneYearChange</div></div>
+                                    <div><div class="label">zIndex Value</div><div>@rs.zindexValue</div></div>
+                                </div>
+                            }
+                        }
+                    </fieldset>
+                </div>
+
+                <div style="float:right">
+                    <fieldset>
+                        <legend>ZESTIMATE</legend>
+                        <div class="table-layout">
+                            <div><div class="label">Amount (currency)</div><div>@item.zestimate.amount.currency</div></div>
+                            <div><div class="label">Amount (value)</div><div>@String.Format("{0:c}", Convert.ToDouble(@item.zestimate.amount.Value))</div></div>
+                            <div><div class="label">Last Updated</div><div>@item.zestimate.lastupdated</div></div>
+                            <div><div class="label">One Week Change (currency)</div><div>@item.zestimate.oneWeekChange.currency</div></div>
+                            <div><div class="label">One Week Change (currency specified)</div><div>@item.zestimate.oneWeekChange.currencySpecified</div></div>
+                            <div><div class="label">One Week Change (deprecated)</div><div>@item.zestimate.oneWeekChange.deprecated</div></div>
+                            <div><div class="label">One Week Change (deprecated specified)</div><div>@item.zestimate.oneWeekChange.deprecatedSpecified</div></div>
+                            <div><div class="label">One Week Change (duration)</div><div>@item.zestimate.oneWeekChange.duration</div></div>
+                            <div><div class="label">One Week Change (value)</div><div>@String.Format("{0:c}", Convert.ToDouble(@item.zestimate.oneWeekChange.Value))</div></div>
+                            <div><div class="label">%</div><div>@item.zestimate.percentile</div></div>
+                            <div><div class="label">Valuation Range (high [currency])</div><div>@item.zestimate.valuationRange.high.currency</div></div>
+                            <div><div class="label">Valuation Range (high [value])</div><div>@String.Format("{0:c}", Convert.ToDouble(@item.zestimate.valuationRange.high.Value))</div></div>
+                            <div><div class="label">Valuation Range (low [currency])</div><div>@item.zestimate.valuationRange.low.currency</div></div>
+                            <div><div class="label">Valuation Range (low [value])</div><div>@String.Format("{0:c}", Convert.ToDouble(@item.zestimate.valuationRange.low.Value))</div></div>
+                            <div><div class="label">Value Change (currency)</div><div>@item.zestimate.valueChange.currency</div></div>
+                            <div><div class="label">Value Change (currency specified)</div><div>@item.zestimate.valueChange.currencySpecified</div></div>
+                            <div><div class="label">Value Change (deprecated)</div><div>@item.zestimate.valueChange.deprecated</div></div>
+                            <div><div class="label">Value Change (deprecated specified)</div><div>@item.zestimate.valueChange.deprecatedSpecified</div></div>
+                            <div><div class="label">Value Change (duration)</div><div>@item.zestimate.valueChange.duration</div></div>
+                            <div><div class="label">Value Change (value)</div><div>@String.Format("{0:c}", Convert.ToDouble(@item.zestimate.valueChange.Value))</div></div>
+
+
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>LINKS</legend>
+                        <div class="table-layout">
+                            <div><div class="label">Comparables</div><div><a href="@item.links.comparables">Comparables</a></div></div>
+                            <div><div class="label">Graphs and Data</div><div><a href="@item.links.graphsanddata">Graphs and Data</a></div></div>
+                            <div><div class="label">Home Details</div><div><a href="@item.links.homedetails">Home Details</a></div></div>
+                            <div><div class="label">Map this home</div><div><a href="@item.links.mapthishome">Map this home</a></div></div>
+                            <div><div class="label">My Estimator</div><div><a href="@item.links.myestimator">My Estimator</a></div></div>
+                            <div><div class="label">My Zestimator</div><div><a href="@item.links.myzestimator">My Zestimator</a></div></div>
+                        </div>
+                    </fieldset>
+
+
+
+                </div>
+            }
+
+
+        </div>
+    </div>
+}
+else
+{
+    <div class="center no-data-found loader">No results found.</div>
+    <div class="center no-data-found ">Please adjust your search criteria and try again.</div>
+}
