@@ -9,8 +9,10 @@
         <div class="results">
             @foreach (var item in Model.response.results)
             {
-                <h2>@item.address.street</h2>
-                <h3>@item.address.city, @item.address.state @item.address.zipcode</h3>
+                <div style="clear:both">
+                    <h2>@item.address.street</h2>
+                    <h3>@item.address.city, @item.address.state @item.address.zipcode</h3>
+                </div>
                 <div style="float:left;">
                     <fieldset>
                         <legend>FACTS</legend>
@@ -44,9 +46,9 @@
                         {
                                 <div class="table-layout">
                                     <div><div class="label">ID</div><div>@rs.id</div></div>
-                                    <div><div class="label">For Sale</div><div><a href="@rs.links.forSaleByOwner">@rs.links.forSale</a></div></div>
-                                    <div><div class="label">For Sale By Owner</div><div><a href="@rs.links.forSaleByOwner">@rs.links.forSaleByOwner</a></div></div>
-                                    <div><div class="label">Overview</div><div><a href="@rs.links.overview">@rs.links.overview</a></div></div>
+                                    <div><div class="label">For Sale</div><div><a href="@rs.links.forSaleByOwner">For Sale</a></div></div>
+                                    <div><div class="label">For Sale By Owner</div><div><a href="@rs.links.forSaleByOwner">For Sale By Owner</a></div></div>
+                                    <div><div class="label">Overview</div><div><a href="@rs.links.overview">Overview</a></div></div>
                                     <div><div class="label">Name</div><div>@rs.name</div></div>
                                     <div><div class="label">Type</div><div>@rs.type</div></div>
                                     <div><div class="label">zIndex One Year Change</div><div>@rs.zindexOneYearChange</div></div>
@@ -101,6 +103,7 @@
 
 
                 </div>
+                <div style="width: 100%;height: 1px; background-color: #ccc; clear: both"></div>
             }
 
 
